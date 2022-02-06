@@ -8,7 +8,7 @@ async function controller({ resp, req }) {
         lastName: `optional|LAST400|string`,
         age: `required|AGE400|number`,
     }
-    const body = await validation({ rule, req, excludeBody: true })
+    const body = await validation({ rule, req })
     return resp.response({ data: body })
 }
 
