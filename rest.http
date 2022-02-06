@@ -1,9 +1,9 @@
 POST http://127.0.0.1:20000/register
 Content-Type: application/json
-Subscripe-Key:HNsk97ujaslo
+Subscribe-Key:HNsk97ujaslo
 
 {
     "name":"asd",
     "age":"1000",
-    "lastName":"555"
+    "lastName":"s"
 }
