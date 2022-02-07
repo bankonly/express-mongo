@@ -1,17 +1,16 @@
-const { listener, appMiddlewareRegister, app } = require("express-mongo-handler").server
-const registerhandler = require("./handlers/register")
+const { listener, appMiddlewareRegister, app } = require("express-mongo-handlers").server;
 
 // Take server port from terminal, default: 10000
-const port = parseInt(process.argv[2]) || 10000
+const port = parseInt(process.argv[2]) || 10000;
 
-// Default middleware neeeded 
-appMiddlewareRegister(app)({ callback: require("./configs/app") })
+// Default middleware needed
+appMiddlewareRegister(app)({ callback: require("./configs/app") });
 
-// Routers
-app.post("/register", registerhandler)
+// Register Router
+require("./routers/router")(app);
 
 // Listener callback after listened
 function appCallback() {
-    console.log("Server is running and listening on:", port)
+  console.log("Server is running and listening on:", port);
 }
-listener({ port, callback: appCallback })
+listener({ port, callback: appCallback });

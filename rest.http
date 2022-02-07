@@ -1,4 +1,4 @@
-POST http://127.0.0.1:20000/register
+GET http://127.0.0.1:20000/response
 Content-Type: application/json
 Subscribe-Key:HNsk97ujaslo
 
