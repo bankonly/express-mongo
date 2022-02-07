@@ -3,7 +3,15 @@ Content-Type: application/json
 Subscribe-Key: HNsk97ujaslo
 
 {
+    "email":"souksavanh.public@gmail.com"
+}
+
+###
+POST http://127.0.0.1:20000/verifyOtp
+Content-Type: application/json
+Subscribe-Key: HNsk97ujaslo
+
+{
     "email":"souksavanh.public@gmail.com",
-    "age":"1000",
-    "lastName":"s"
+    "otp":"879385"
 }

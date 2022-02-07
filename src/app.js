@@ -1,8 +1,4 @@
-const { server, mailer } = require("express-mongo-handlers");
-const { listener, appMiddlewareRegister, app } = server;
-
-// config mailer
-mailer.mailConfig({ email: process.env.MAILER_EMAIL, service: process.env.MAILER_SERVICE, password: process.env.MAILER_PASS });
+const { listener, appMiddlewareRegister, app } = require("express-mongo-handlers").server;
 
 // Take server port from terminal, default: 10000
 const port = parseInt(process.argv[2]) || 10000;
@@ -17,4 +13,4 @@ require("./routers/router")(app);
 function appCallback() {
   console.log("Server is running and listening on:", port);
 }
-listener({ port, callback: appCallback });
+listener({ port, callback: appCallback, enableMailer: true });
