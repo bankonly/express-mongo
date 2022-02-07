@@ -1,4 +1,8 @@
-const { listener, appMiddlewareRegister, app } = require("express-mongo-handlers").server;
+const { server, mailer } = require("express-mongo-handlers");
+const { listener, appMiddlewareRegister, app } = server;
+
+// config mailer
+mailer.mailConfig({ email: process.env.MAILER_EMAIL, service: process.env.MAILER_SERVICE, password: process.env.MAILER_PASS });
 
 // Take server port from terminal, default: 10000
 const port = parseInt(process.argv[2]) || 10000;
