@@ -7,9 +7,8 @@ async function controller({ resp, req }) {
     email: `required|VEROTP0001|string`,
     otp: `required|VEROTP0002|number`,
   };
-
   const body = await validation({ rule, req });
-  mailer.verifyOtp({ email: body.email, otpCode: body.otp, throwError: true })
+  mailer.verifyOtp({ email: body.email, otpCode: body.otp, throwError: true });
   return resp.response({ data: body });
 }
 

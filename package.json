@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express-mongo-handlers": "^1.16.0",
+    "express-mongo-handlers": "^1.19.0",
     "mongoose": "^6.2.0"
   }
 }
